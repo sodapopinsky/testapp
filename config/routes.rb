@@ -1,7 +1,10 @@
 Testapp::Application.routes.draw do
-  get "static_pages/home"
+ root  'static_pages#home'
   get "static_pages/help"
-    get "static_pages/about"
+  get "static_pages/about"
+   match '/home', to: 'static_pages#home', via: 'get'
+ match '/contact', to: 'static_pages#contact', via: 'get'
+match '/signup',  to: 'users#new',            via: 'get'
   resources :microposts
 
   resources :users

@@ -5,18 +5,17 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <!-- [if lt IE 9]>
-  <script src = "http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+   <%= render 'layouts/shim' %>
+  
 </head>
 <body>
 <header class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<%= link_to "sample app", '#', id: "logo" %>
+			<%= link_to "atomic burger", '#', id: "logo" %>
 			<nav>
 				<ul class="nav pull-right">
-					<li><%= link_to "Home", '#' %></li>
+					<li><%= link_to "Home", home_path %></li>
 					<li><%= link_to "Help", '#' %></li>
 					<li><%= link_to "Sign in", '#' %></li>
 				</ul>
@@ -24,8 +23,13 @@
 		</div>
 	</div>
 </header>
-<div class="container">
-<%= yield %>
 
-</body>
+<div class="container">
+
+     <%= yield %>
+ <%= render 'layouts/footer' %>
+</div>
+
+
+
 </html>

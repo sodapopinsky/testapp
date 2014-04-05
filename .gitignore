@@ -20,3 +20,4 @@ doc/
 *~
 .project
 .DT_Store
+bundler_stubs/

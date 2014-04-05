@@ -2,15 +2,21 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-
+gem 'bootstrap-sass', '2.0.0'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 gem 'sqlite3'
 gem 'rspec-rails', '2.9.0'
+gem 'guard-rspec', '0.5.5'
+gem 'guard-spork'
 end
 
 group :test do
 	gem 'capybara', '1.1.2'
+	gem 'rspec-rails', '2.9.0'
+	gem 'rb-fsevent', :require =>false
+	gem 'growl', '1.0.3'
+	gem 'spork-rails', :github => 'sporkrb/spork-rails'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

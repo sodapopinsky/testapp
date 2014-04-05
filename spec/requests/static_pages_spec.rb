@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "HomePage" do
+describe "SamplePages/" do
   describe "GET /static_pages" do
     it "should have the content 'Sample App'" do
 
@@ -14,6 +14,11 @@ describe "HomePage" do
       visit '/static_pages/help'
       page.should have_content('Help')
     end
+    it "Should have base title" do
+        visit '/static_pages/help'
+      page.should have_selector('title', :text => "Ruby on Rails Tutorial Sample App | Help")
+    end
+
   end
 
   describe "About Page" do

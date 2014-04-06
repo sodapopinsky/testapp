@@ -1,13 +1,18 @@
 Testapp::Application.routes.draw do
+  get "invoices/home"
  root  'static_pages#home'
+
   get "static_pages/help"
   get "static_pages/about"
    match '/home', to: 'static_pages#home', via: 'get'
  match '/contact', to: 'static_pages#contact', via: 'get'
 match '/signup',  to: 'users#new',            via: 'get'
-  resources :microposts
+   match '/invoices', to: 'invoices#index', via: 'get'
+
+
 
   resources :users
+  resources :invoices
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

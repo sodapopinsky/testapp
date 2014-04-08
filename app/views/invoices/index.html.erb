@@ -1,2 +1,32 @@
-<h1>Invoices#index</h1>
-<p>Find me in app/views/invoices/index.html.erb</p>
+<h1>Listing invoices</h1>
+<div class="scsstest">fda</div>
+<%= link_to 'New Invoice', new_invoice_path, :class => "btn btn-primary" %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Vendor name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.number %></td>
+        <td><%= invoice.vendor_name %></td>
+     
+        <td><%#= link_to 'Edit', edit_invoice_path(invoice) %></td>
+        <td><%#= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btm-mini btn-danger' %></td>
+        <td></td>
+        <td style="text-align:right;"><%= link_to 'Show', invoice, :class => 'btn btn-mini' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
